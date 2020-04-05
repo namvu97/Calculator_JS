@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div id="wrapper">
+		<div id="calculator">
+			<div id="">
+				<div id="calc"></div>
+				<div id="display">0</div>
+			</div>
+			<div id="button">
+				<table class="table">
+					<tbody>
+						<tr>
+							<td id="clear" colspan="3"><button>AC</button></td>
+							<td id="divide"><button class="operation" >&#247;</button></td>
+						</tr>
+						<tr>
+							<td id="seven"><button>7</button></td>
+							<td id="eight"><button>8</button></td>
+							<td id="nine"><button>9</button></td>
+							<td id="multiply"><button class="operation">&#215;</button></td>
+						</tr>
+						<tr>
+							<td id="four"><button>4</button></td>
+							<td id="five"><button>5</button></td>
+							<td id="six"><button>6</button></td>
+							<td id="subtract"><button class="operation" >&#8722;</button></td>
+						</tr>
+						<tr>
+							<td id="one"><button>1</button></td>
+							<td id="two"><button>2</button></td>
+							<td id="three"><button>3</button></td>
+							<td id="add"><button class="operation" >&#43;</button></td>
+						</tr>
+						<tr>
+							<td id="zero" colspan="3"><button>0</button></td>
+							<!-- <td id="decimal"><button>.</button></td> -->
+							<td id="equals"><button class="operation">&#61;</button></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+    </div>
+    <script>
+        window.onload = function() {
+            var calc = "";
+			var display = "";
+            function update() {
+                document.getElementById("calc").innerHTML = calc;
+                document.getElementById("display").innerHTML = display || "0";
+			};
+			update();
+            document.getElementById("equals").onclick = function () {
+				display = eval(calc);
+                console.log("Display: " + display)
+				calc = `${calc}=${display}`; 
+                console.log("Calc: " + calc)
+				update();
+				calc = display;
+                console.log("Calc 2: " + calc)
+            }
+            document.getElementById("add").onclick = function () {
+				var operator = "+";
+				display = operator;
+				if (calc == "") calc = "0";
+				calc += operator;
+                update();
+                console.log("Display: " + display)
+                console.log("Calc: " + calc)
+            }
+            document.getElementById("subtract").onclick = function () {
+				var operator = "-";
+				display = operator;
+				if (calc == "") calc = "0";
+				calc += operator;
+                update();
+                console.log("Display: " + display)
+                console.log("Calc: " + calc)
+            }
+            document.getElementById("multiply").onclick = function () {
+				var operator = "*";
+				display = operator;
+				if (calc == "") calc = "0";
+				calc += operator;
+                update();
+                console.log("Display: " + display)
+                console.log("Calc: " + calc)
+            }
+            document.getElementById("divide").onclick = function () {
+				var operator = "/";
+				display = operator;
+				if (calc == "") calc = "0";
+				calc += operator;
+                update();
+                console.log("Display: " + display)
+                console.log("Calc: " + calc)
+            }
+            document.getElementById("zero").onclick = function () {
+				var operator = "0";
+				display += operator;
+				calc += operator;
+                update();
+                console.log(display);
+            }
+            document.getElementById("clear").onclick = function () {
+                display = "0";
+                calc = "";
+                update();
+            }
+            document.getElementById("one").onclick = function () {
+				var operator = "1";
+				display += operator;
+				calc += operator;
+                update();
+                console.log("Display: " + display);
+                console.log("Calc: " + calc);
+            }
+            document.getElementById("two").onclick = function () {
+				var operator = "2";
+				display += operator;
+				calc += operator;
+                update();
+                console.log(display);
+            }
+            document.getElementById("three").onclick = function () {
+				var operator = "3";
+				display += operator;
+				calc += operator;
+                update();
+                console.log(display);
+            }
+            document.getElementById("four").onclick = function () {
+				var operator = "4";
+				display += operator;
+				calc += operator;
+                update();
+                console.log(display);
+            }
+            document.getElementById("five").onclick = function () {
+				var operator = "5";
+				display += operator;
+				calc += operator;
+                update();
+                console.log(display);
+            }
+            document.getElementById("six").onclick = function () {
+				var operator = "6";
+				display += operator;
+				calc += operator;
+                update();
+                console.log(display);
+            }
+            document.getElementById("seven").onclick = function () {
+				var operator = "7";
+				display += operator;
+				calc += operator;
+                update();
+                console.log(display);
+            }
+            document.getElementById("eight").onclick = function () {
+				var operator = "8";
+				display += operator;
+				calc += operator;
+                update();
+                console.log(display);
+            }
+            document.getElementById("nine").onclick = function () {
+				var operator = "9";
+				display += operator;
+				calc += operator;
+                update();
+                console.log(display);
+            }
+        };
+    </script>
+</body>
+</html>
